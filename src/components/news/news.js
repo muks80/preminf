@@ -30,5 +30,3 @@ const News = () => {
 }
  
 export default News;
-
-// 'http://localhost:8000/news'

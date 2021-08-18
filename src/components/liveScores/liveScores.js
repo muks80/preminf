@@ -20,7 +20,7 @@ const LiveScores = () => {
                 <Container>
                     { todaysGamesError && <Segment style={{margin: '15px'}} textAlign='center'><div>{todaysGamesError}</div></Segment> }
                     { todaysGamesPending && <Segment style={{margin: '15px'}} textAlign='center'><div>Loading...</div></Segment> }
-                    { (todaysGames && !todaysGames.data.api.length) && <Segment style={{margin: '15px'}} textAlign='center'><div>No games today</div><Link to='/'>Fixtures/Results</Link></Segment>}
+                    { (todaysGames && !todaysGames.data.api.fixtures.length) && <Segment style={{margin: '15px'}} textAlign='center'><div>No games today</div><Link to='/'>Fixtures/Results</Link></Segment>}
                     { todaysGames && todaysGames.data.api.fixtures.map(fixture => {return <MatchCard fixture={fixture} key={fixture.fixture_id}/>})}
                 </Container>
             </Container>   

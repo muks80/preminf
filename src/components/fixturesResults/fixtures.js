@@ -5,7 +5,7 @@ import { Container, Segment } from 'semantic-ui-react';
 import MatchCard from './matchCard';
 import PageHeader from '../pageHeader';
 
-const Home = (props) => {
+const Fixtures = (props) => {
    
     return(
        <Container className="App">
@@ -21,4 +21,4 @@ const Home = (props) => {
     );
 }
  
-export default Home;
+export default Fixtures;

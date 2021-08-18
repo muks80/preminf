@@ -6,7 +6,7 @@ import GoogleAuth from '../../apis/googleAuth';
 import { useState } from 'react'
 
 const Navbar = () => {
-    const [activeItem, setActiveItem] = useState('Fixtures/Results')
+    const [activeItem, setActiveItem] = useState('Live Scores')
     
     const handleItemClick = (e) => {
         setActiveItem(e.target.innerHTML)
@@ -22,7 +22,7 @@ const Navbar = () => {
                     active={activeItem === 'Live Scores'}
                     onClick={handleItemClick}
                 >
-                <Link to='/livescores'>Live Scores</Link>
+                <Link to='/'>Live Scores</Link>
                 </Menu.Item>
                 <Menu.Item
                     as='div'
@@ -38,7 +38,7 @@ const Navbar = () => {
                     active={activeItem === 'Fixtures/Results'}
                     onClick={handleItemClick}
                 >
-                <Link to='/'>Fixtures/Results</Link>
+                <Link to='/fixtures'>Fixtures/Results</Link>
                 </Menu.Item>
                 <Menu.Item
                     as='div'

@@ -6,7 +6,7 @@ import GoogleAuthContextProvider from '../apis/googleAuthContext';
 
 import fixturesData from '../apis/fixturesData';
 import Navbar from './routes/navbar';
-import Home from './fixturesResults/home';
+import Fixtures from './fixturesResults/fixtures';
 import LiveScores from './liveScores/liveScores';
 import News from './news/news';
 import NewsArticle from './news/newsArticle';
@@ -53,8 +53,8 @@ const App = () => {
         <Router>
             <Navbar/>
             <Switch>
-                  <Route exact path="/"><Home round={round} fixtures={fixtures} updateRound={updateRound}/></Route>
-                  <Route exact path="/livescores"><LiveScores/></Route>
+                  <Route exact path="/"><LiveScores/></Route>
+                  <Route exact path="/fixtures"><Fixtures round={round} fixtures={fixtures} updateRound={updateRound}/></Route>
                   <Route exact path="/news"><News/></Route>
                   <Route exact path="/news/:id">
                       <GoogleAuthContextProvider>
