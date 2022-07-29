@@ -14,9 +14,11 @@ const useAxios = (url, int) => {
 
         fixturesData.get(url, source)
         .then((res) => {
-        if (res.statusText !== 'OK'){
+        if (res.status !== 200){
+            console.log(res)
             throw Error('could not fetch data from that resource')
         }
+        console.log(res)
         return res;
         })
         .then(data => {
@@ -30,6 +32,7 @@ const useAxios = (url, int) => {
             } else {
             setIsPending(false);
             setError(err);
+            console.log(err);
             }
         }).then(
             setTimeout(() => {

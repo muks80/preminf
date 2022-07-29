@@ -19,17 +19,19 @@ const App = () => {
 
     useEffect(() => {
         const fetchFixtures = () => {
-            fixturesData.get(`fixtures/league/3456/Regular_Season_-_${round}`).then((res) => {
+            fixturesData.get(`fixtures/league/4335/Regular_Season_-_${round}`).then((res) => {
                 setFixtures(res.data.api.fixtures);
                 }).catch(function (error) {
                 console.log(error);
             })
         }
 
+        //Season 21/22 league_id = 3456
+
         if (round !== prevRound.current) {
                 fetchFixtures();
             } else {
-            fixturesData.get('fixtures/rounds/3456/current').then((res) => {
+            fixturesData.get('fixtures/rounds/4335/current').then((res) => {
                 let currentRound = res.data.api.fixtures[0].slice(-2);
                 if (currentRound[0] === '_') {
                     currentRound = currentRound[1];

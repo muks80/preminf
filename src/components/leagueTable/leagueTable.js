@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 const LeagueTable = () => {
   const { data: table, isPending: tablePending, error: tableError } 
-          = useAxios('leagueTable/3456', (1000 * 60 *60));
+          = useAxios('leagueTable/4335', (1000 * 60 * 60));
 
   useEffect (() => {
   }, [table])

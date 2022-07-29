@@ -8,7 +8,7 @@ import useAxios from '../../apis/useAxios';
 
 const LiveScores = () => {
     const { data: todaysGames, isPending: todaysGamesPending, error: todaysGamesError } 
-          = useAxios(`fixtures/league/3456/${new Date().toISOString().slice(0,10)}`, (1000 * 60 * 5));
+          = useAxios(`fixtures/league/4335/${new Date().toISOString().slice(0,10)}`, (1000 * 60 * 5));
 
     useEffect(() => {
     }, [todaysGames])
@@ -20,7 +20,7 @@ const LiveScores = () => {
                 <Container>
                     { todaysGamesError && <Segment style={{margin: '15px'}} textAlign='center'><div>{todaysGamesError}</div></Segment> }
                     { todaysGamesPending && <Segment style={{margin: '15px'}} textAlign='center'><div>Loading...</div></Segment> }
-                    { (todaysGames && !todaysGames.data.api.fixtures.length) && <Segment style={{margin: '15px'}} textAlign='center'><div>No games today</div><Link to='/'>Fixtures/Results</Link></Segment>}
+                    { (todaysGames && !todaysGames.data.api.fixtures.length) && <Segment style={{margin: '15px'}} textAlign='center'><div>No games today</div><Link to='/fixtures'>Fixtures/Results</Link></Segment>}
                     { todaysGames && todaysGames.data.api.fixtures.map(fixture => {return <MatchCard fixture={fixture} key={fixture.fixture_id}/>})}
                 </Container>
             </Container>   
